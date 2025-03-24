@@ -1,0 +1,96 @@
+Host github.nextlab.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/gitNextlab
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/gitkey
+
+Host PalmettoGate
+    HostName slogin.palmetto.clemson.edu
+    User zxu3
+
+Host nock8
+  HostName 130.127.199.110
+  User nock8
+  IdentityFile ~/.ssh/id_rsa
+
+Host ser9
+  HostName 130.127.198.237
+  User ser9
+  IdentityFile ~/.ssh/id_rsa
+
+Host ser8
+    # HostName 130.127.198.237
+  HostName 130.127.199.247
+  User ser8
+  IdentityFile ~/.ssh/id_rsa
+  LocalForward 5901 localhost:5900
+
+Host leviathan
+  HostName leviathan.ele.uri.edu
+  User zxu
+
+Host michelle
+  HostName 130.127.198.216
+  User michelle
+  IdentityFile ~/.ssh/id_rsa
+
+Host m_proart
+  HostName 130.127.199.206
+  User alfred
+  IdentityFile ~/.ssh/id_rsa
+  LocalForward 9889 localhost:8080
+  LocalForward 9899 localhost:9090
+
+Host proart
+    # HostName 130.127.199.172
+  HostName 130.127.199.127
+  User alfred
+  IdentityFile ~/.ssh/id_rsa
+  ForwardX11 yes
+  ForwardX11Trusted yes
+
+Host guacd
+    #HostName 130.127.199.172
+  HostName 130.127.199.127
+  User alfred
+  LocalForward 8889 130.127.199.127:8888
+  LocalForward 8890 130.127.199.127:8080
+  LocalForward 8891 192.168.2.99:9090
+  LocalForward 8892 130.127.199.127:9000
+  LocalForward 8893 130.127.199.127:9001
+  IdentityFile ~/.ssh/id_rsa
+
+Host OCT_FPGA
+    HostName 192.168.0.198
+    User alfred
+    Port 22
+    ProxyCommand ssh -W %h:%p jump-host
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    IdentityFile ~/.ssh/OCT
+
+Host aws
+    HostName 3.214.162.142
+    User ubuntu
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
+
+Host jump-host
+    HostName 199.94.60.18
+    User alfred
+    Port 22
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    IdentityFile /Users/alfred/.ssh/OCT
+
+
+Host u280_node151
+     HostName pc151.cloudlab.umass.edu
+     User TWei_URI
+     Port 22
+     IdentityFile /Users/alfred//.ssh/NERC_VM_private_key.pem
+
